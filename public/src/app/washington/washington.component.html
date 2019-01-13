@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-image">
+        <img src="{{image}}" alt="image" style="height:250px;">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Washington<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Washington<i class="material-icons right">close</i></span>
+        <hr>
+        <div>
+            <p>Status : {{status|titlecase}}</p>
+            <p>Humidity : {{humidity}} %</p>
+            <p>Temperature : {{avg_temp| number : '1.2-2'}} °C </p>
+                <li class="left">High : {{high_temp| number : '1.2-2'}} °C</li>
+                <li class="left">Low : {{low_temp| number : '1.2-2'}} °C</li><br>
+            <p>Wind : {{wind}} m/s</p>
+            <p>Pressure : {{pressure}} hpa</p>
+        </div>
+    </div>
+</div>

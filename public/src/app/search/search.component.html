@@ -1,0 +1,49 @@
+<a class="waves-effect waves-light modal-trigger" href="#modal1">Try Demo</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content black-text">
+    <form (submit)="check()">
+        <div class="ta">
+          <h5>Please provide the location</h5> 
+          <input id="search" type="text" name="loc" [(ngModel)]="loc" style="width:100px; text-align: center;" required>
+        </div>
+    </form>
+    <div *ngIf="display==0">
+        <div class="error">{{msg}}</div>
+    </div>
+    <div *ngIf="display==1" class="ta">
+      <br>
+      <fieldset>
+        <div>
+          <h5>Mosam for {{loc|titlecase}}</h5>
+          <hr>
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Humidity</th>
+                <th>Temperature</th>
+                <th>Wind</th>
+                <th>Pressure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{status|titlecase}}</td>
+                <td>{{humidity}} %</td>
+                <td>Average : {{avg_temp | number : '1.2-2'}} °C <br>
+                    High : {{high_temp| number : '1.2-2'}} °C<br>
+                    Low : {{low_temp| number : '1.2-2'}} °C
+                </td>
+                <td>{{wind}} m/s</td>
+                <td>{{pressure}} hpa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
